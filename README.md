@@ -18,12 +18,12 @@ This project is a full-stack web application named "Health App". It's designed t
 
 1. Clone the repository to your local machine.
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/ProcrastinatorMuffin/VUE-health-app
     ```
 
 2. Navigate to the project directory.
     ```sh
-    cd <project-directory>
+    cd VUE-health-app
     ```
 
 3. Build and run the Docker containers using Docker Compose.
@@ -31,7 +31,7 @@ This project is a full-stack web application named "Health App". It's designed t
     docker-compose up --build
     ```
 
-The application should now be running on your local machine. The frontend should be accessible at `http://localhost:<frontend-port>` and the backend at `http://localhost:<backend-port>`. Replace `<frontend-port>` and `<backend-port>` with the ports specified in your `docker-compose.yml` file.
+The application should now be running on your local machine. The frontend should be accessible at `http://localhost:5173` and the backend at `http://localhost:3000`.
 
 ## Deployment
 
@@ -39,7 +39,7 @@ To deploy the application, you can use the same Docker Compose command. However,
 
 ## Contributing
 
-You are welcome to contribute to project. 
+You are welcome to contribute to the project. 
 
 ### How to Contribute
 
@@ -52,4 +52,4 @@ You are welcome to contribute to project.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the MIT License. For details, please see the [LICENSE](LICENSE.md) file.
