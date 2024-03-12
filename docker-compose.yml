@@ -1,0 +1,15 @@
+version: '3'
+services:
+  frontend:
+    build: frontend
+    ports:
+      - '5173:5173'
+    environment:
+      - VITE_BASE_URL=0.0.0.0
+    depends_on:
+      - backend
+
+  backend:
+    build: backend/api
+    ports:
+      - '3000:3000'

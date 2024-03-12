@@ -1,0 +1,163 @@
+/* Gruvbox Dark Theme Color Palette */
+:root {
+  --gruvbox-bg: #282828; /* background */
+  --gruvbox-dark0: #1d2021; /* darker background */
+  --gruvbox-dark1: #3c3836; /* light text */
+  --gruvbox-dark2: #504945; /* secondary text */
+  --gruvbox-dark3: #665c54; /* comments */
+  --gruvbox-dark4: #7c6f64; /* dark foreground */
+
+  --gruvbox-light0: #fbf1c7; /* light background */
+  --gruvbox-light1: #ebdbb2; /* dark text */
+  --gruvbox-light2: #d5c4a1; /* secondary background */
+  --gruvbox-light3: #bdae93; /* tertiary text */
+  --gruvbox-light4: #a89984; /* inactive selection bg */
+
+  --gruvbox-bright-red: #fb4934; /* error, danger */
+  --gruvbox-bright-green: #b8bb26; /* success */
+  --gruvbox-bright-yellow: #fabd2f; /* warning */
+  --gruvbox-bright-blue: #83a598; /* information */
+  --gruvbox-bright-purple: #d3869b; /* accent, unique */
+  --gruvbox-bright-aqua: #8ec07c; /* additional */
+  --gruvbox-bright-orange: #fe8019; /* highlight */
+}
+
+/* Adjusting the existing CSS to match Gruvbox dark theme */
+:root {
+  --vt-c-white: var(--gruvbox-light0);
+  --vt-c-white-soft: var(--gruvbox-light1);
+  --vt-c-white-mute: var(--gruvbox-light2);
+
+  --vt-c-black: var(--gruvbox-bg);
+  --vt-c-black-soft: var(--gruvbox-dark0);
+  --vt-c-black-mute: var(--gruvbox-dark1);
+
+  --vt-c-indigo: var(--gruvbox-bright-blue);
+
+  --vt-c-divider-light-1: rgba(121, 116, 102, 0.29);
+  --vt-c-divider-light-2: rgba(121, 116, 102, 0.12);
+  --vt-c-divider-dark-1: rgba(146, 131, 116, 0.65);
+  --vt-c-divider-dark-2: rgba(146, 131, 116, 0.48);
+
+  --vt-c-text-light-1: var(--gruvbox-light1);
+  --vt-c-text-light-2: var(--gruvbox-light3);
+  --vt-c-text-dark-1: var(--gruvbox-light0);
+  --vt-c-text-dark-2: var(--gruvbox-light2);
+}
+
+/* Semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-black);
+  --color-background-soft: var(--vt-c-black-soft);
+  --color-background-mute: var(--vt-c-black-mute);
+
+  --color-border: var(--vt-c-divider-dark-2);
+  --color-border-hover: var(--vt-c-divider-dark-1);
+
+  --color-heading: var(--vt-c-white);
+  --color-text: var(--vt-c-white-soft);
+  
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-white);
+    --color-text: var(--vt-c-white-soft);
+  }
+}
+
+
+/* Import JetBrains Mono font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* Global styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--gruvbox-bright-blue);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--gruvbox-bright-aqua);
+}
+
+/* Buttons */
+button {
+  background-color: var(--gruvbox-bright-green);
+  color: var(--color-background);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--gruvbox-bright-aqua);
+}
+
+/* Forms */
+input, textarea, select {
+  background-color: var(--color-background-soft);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--gruvbox-bright-blue);
+}
+
+/* Terminal window styles */
+.terminal {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.terminal pre {
+  font-family: 'JetBrains Mono', monospace;
+  white-space: pre-wrap;
+}

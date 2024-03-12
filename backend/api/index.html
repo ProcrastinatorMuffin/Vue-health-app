@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Patients List</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container my-5">
+		<h1>Patients List</h1>
+		<table class="table table-bordered table-hover mt-3">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Date of Birth</th>
+					<th>Phone Number</th>
+					<th>Gender</th>
+					<th>Address</th>
+				</tr>
+			</thead>
+			<tbody id="patient-data">
+			</tbody>
+		</table>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.ajax({
+				url: "localhost:8000/patients",
+				type: "GET",
+				success: function(data) {
+					data.forEach(function(patient) {
+						var row = "<tr><td>" + patient.id + "</td><td>" + patient.name + "</td><td>" + patient.email + "</td><td>" + patient.dob + "</td><td>" + patient.phone_number + "</td><td>" + patient.gender + "</td><td>" + patient.address + "</td></tr>";
+						$("#patient-data").append(row);
+					});
+				}
+			});
+		});
+	</script>
+</body>
+</html>
